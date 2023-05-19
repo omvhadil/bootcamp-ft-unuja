@@ -2,7 +2,6 @@
 @section('title', 'dashboard')
 @section('content')
     <div>
-        <div></div>
-        <h1>Heloo</h1>
+        <h1>page list mahasiswa</h1>
     </div>
 @endsection
