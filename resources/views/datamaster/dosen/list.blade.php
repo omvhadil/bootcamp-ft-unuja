@@ -13,7 +13,7 @@
                 <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover"
                     title="Click to add a user">
                     <a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal"
-                        data-bs-target="#kt_modal_invite_friends">
+                        data-bs-target="#kt_modal_new_address">
                         <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
                         <span class="svg-icon svg-icon-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -24,11 +24,141 @@
                                     fill="black" />
                             </svg>
                         </span>
-                        <!--end::Svg Icon-->New Dosen
+                        <!--end::Svg Icon-->Add Dosen
                     </a>
                 </div>
             </div>
             <!--end::Header-->
+            <!--begin::Modal - add Dosen-->
+            <div class="modal fade" id="kt_modal_new_address" tabindex="-1" aria-hidden="true">
+                <!--begin::Modal dialog-->
+                <div class="modal-dialog modal-dialog-centered mw-650px">
+                    <!--begin::Modal content-->
+                    <div class="modal-content">
+                        <!--begin::Form-->
+                        <form class="form" action="#" id="kt_modal_new_address_form">
+                            <!--begin::Modal header-->
+                            <div class="modal-header" id="kt_modal_new_address_header">
+                                <h2>Add New Dosen</h2>
+                                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                    <span class="svg-icon svg-icon-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2"
+                                                rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+                                            <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                                transform="rotate(45 7.41422 6)" fill="black" />
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                </div>
+                            </div>
+                            <!--end::Modal header-->
+                            <!--begin::Modal body-->
+                            <div class="modal-body py-10 px-lg-17">
+                                <!--begin::Scroll-->
+                                <div class="scroll-y me-n7 pe-7" id="kt_modal_new_address_scroll" data-kt-scroll="true"
+                                    data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
+                                    data-kt-scroll-dependencies="#kt_modal_new_address_header"
+                                    data-kt-scroll-wrappers="#kt_modal_new_address_scroll" data-kt-scroll-offset="300px">
+                                    <!--begin::Input group-->
+                                    {{-- nim --}}
+                                    <div class="d-flex flex-column mb-5 fv-row">
+                                        <label class="required fs-5 fw-bold mb-2">NIM</label>
+                                        <input class="form-control form-control-solid" placeholder="" name="address2" />
+                                    </div>
+                                    {{-- fullame --}}
+                                    <div class="d-flex flex-column mb-5 fv-row">
+                                        <label class="required fs-5 fw-bold mb-2">Full Name</label>
+                                        <input class="form-control form-control-solid" placeholder="" name="city" />
+                                    </div>
+                                    {{-- jurusan --}}
+                                    <div class="d-flex flex-column mb-5 fv-row">
+                                        <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                            <span class="required">Jurusan</span>
+                                            <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                title="silahkan pilih jurusan yang kamu sukai"></i>
+                                        </label>
+                                        <select name="country" data-control="select2"
+                                            data-dropdown-parent="#kt_modal_new_address"
+                                            data-placeholder="Select a Country..." class="form-select form-select-solid">
+                                            <option value="">Pilih Jurusan...</option>
+                                            <option value="IF">Tehnik Informatika</option>
+                                            <option value="TE">Tehnik Elektro</option>
+                                            <option value="TI">Tehnik Informasi</option>
+                                        </select>
+                                    </div>
+                                    {{-- semester --}}
+                                    <div class="d-flex flex-column mb-5 fv-row">
+                                        <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                            <span class="required">Semester</span>
+                                            <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                title="Masukkan Semester"></i>
+                                        </label>
+                                        <select name="country" data-control="select2"
+                                            data-dropdown-parent="#kt_modal_new_address"
+                                            data-placeholder="Select a Country..." class="form-select form-select-solid">
+                                            <option value="">Pilih Semester...</option>
+                                            <option value="1">1 </option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                        </select>
+                                    </div>
+                                    {{-- tgl lahir --}}
+                                    <div class="d-flex flex-column mb-5 fv-row">
+                                        <label class="required fs-5 fw-bold mb-2">Tanggal Lahir</label>
+                                        <input class="form-control form-control-solid" placeholder="" name="address2" />
+                                    </div>
+                                    {{-- jenis kelamin --}}
+                                    <div class="d-flex flex-column mb-5 fv-row">
+                                        <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                            <span class="required">Jenis Kelamin</span>
+                                            <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                title="pilih jenis kelamin"></i>
+                                        </label>
+                                        <select name="country" data-control="select2"
+                                            data-dropdown-parent="#kt_modal_new_address"
+                                            data-placeholder="Select a Country..." class="form-select form-select-solid">
+                                            <option value="">Pilih Jenis Kelamin...</option>
+                                            <option value="laki-laki">Laki-laki </option>
+                                            <option value="perempuan">Perempuan</option>
+                                        </select>
+                                    </div>
+                                    {{-- email --}}
+                                    <div class="d-flex flex-column mb-5 fv-row">
+                                        <label class="required fs-5 fw-bold mb-2">Email</label>
+                                        <input class="form-control form-control-solid" placeholder="" name="address2" />
+                                    </div>
+                                </div>
+                                <!--end::Scroll-->
+                            </div>
+                            <!--end::Modal body-->
+                            <!--begin::Modal footer-->
+                            <div class="modal-footer flex-center">
+                                <!--begin::Button-->
+                                <button type="reset" id="kt_modal_new_address_cancel"
+                                    class="btn btn-light me-3">Cancel</button>
+                                <button type="submit" id="kt_modal_new_address_submit" class="btn btn-primary">
+                                    <span class="indicator-label">Submit</span>
+                                    <span class="indicator-progress">Please wait...
+                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                </button>
+                                <!--end::Button-->
+                            </div>
+                            <!--end::Modal footer-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                </div>
+            </div>
+            <!--end::Modal - add Dosen-->
+
             <!--begin::Body-->
             <div class="card-body py-3">
                 <!--begin::Table container-->
@@ -40,8 +170,8 @@
                             <tr class="fw-bolder text-muted">
                                 <th class="w-25px">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                        <input class="form-check-input" type="checkbox" value="1" data-kt-check="true"
-                                            data-kt-check-target=".widget-13-check" />
+                                        <input class="form-check-input" type="checkbox" value="1"
+                                            data-kt-check="true" data-kt-check-target=".widget-13-check" />
                                     </div>
                                 </th>
                                 <th class="min-w-120px">NIM</th>
@@ -75,7 +205,8 @@
                                         Rohman</a>
                                 </td>
                                 <td>
-                                    <a href="#" class="text-dark text-hover-primary d-block mb-1 fs-6">Informatika</a>
+                                    <a href="#"
+                                        class="text-dark text-hover-primary d-block mb-1 fs-6">Informatika</a>
                                 </td>
                                 <td>
                                     <a href="#" class="text-dark text-hover-primary d-block mb-1 fs-6">Alassumur
@@ -99,7 +230,8 @@
                                         class="text-dark text-hover-primary d-block mb-1 fs-6">fadil.yoi@gmail.com</a>
                                 </td>
                                 <td>
-                                    <a href="#" class="text-dark text-hover-primary d-block mb-1 fs-6">10/11/2019</a>
+                                    <a href="#"
+                                        class="text-dark text-hover-primary d-block mb-1 fs-6">10/11/2019</a>
                                 </td>
                                 <td>
                                     <span class="badge badge-light-success">Active</span>
