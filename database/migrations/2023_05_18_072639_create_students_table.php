@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('nim')->primary();
             $table->string('name');
             $table->string('email');
-            $table->string('jurusan');
             $table->text('alamat');
             $table->integer('semester');
             $table->string('no_hp');

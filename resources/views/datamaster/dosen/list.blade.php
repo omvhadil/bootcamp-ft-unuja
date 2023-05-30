@@ -205,8 +205,7 @@
                                         Rohman</a>
                                 </td>
                                 <td>
-                                    <a href="#"
-                                        class="text-dark text-hover-primary d-block mb-1 fs-6">Informatika</a>
+                                    <a href="#" class="text-dark text-hover-primary d-block mb-1 fs-6">-</a>
                                 </td>
                                 <td>
                                     <a href="#" class="text-dark text-hover-primary d-block mb-1 fs-6">Alassumur

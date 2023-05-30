@@ -6,3 +6,4 @@
 </script>
 <script src="{{ url('assets/metronic/js/plugins.bundle.js') }}"></script>
 <script src="{{ url('assets/metronic/js/scripts.bundle.js') }}"></script>
+@stack('modal-js')
