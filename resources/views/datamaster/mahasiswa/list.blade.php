@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('title', 'list mahasiswa')
 @section('content')
+
     <div id="kt_content_container" class="container-xxl">
         <!--begin::Tables Widget 13-->
         <div class="card mb-5 mb-xl-8">
@@ -35,7 +36,7 @@
                 <!--begin::Table container-->
                 <div class="table-responsive">
                     <!--begin::Table-->
-                    <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+                    <table id="myTable" class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
                         <!--begin::Table head-->
                         <thead>
                             <tr class="fw-bolder text-muted">
@@ -45,16 +46,16 @@
                                             data-kt-check-target=".widget-13-check" />
                                     </div>
                                 </th>
-                                <th class="min-w-120px">NIM</th>
-                                <th class="min-w-250px">Nama</th>
-                                <th class="max-w-250px">Email</th>
-                                <th class="min-w-220px">ALamat</th>
-                                <th class="min-w-120px">Semester</th>
-                                <th class="min-w-220px">No Tlfn</th>
-                                <th class="min-w-120px">Tempat Lahir</th>
-                                <th class="min-w-180px">JK</th>
-                                <th class="min-w-120px">Thn Masuk</th>
-                                <th class="min-w-120px">Status</th>
+                                <th class="min-w-100px">NIM</th>
+                                <th class="min-w-125px">Nama</th>
+                                <th class="min-w-125px">Email</th>
+                                <th class="min-w-125px">ALamat</th>
+                                <th class="min-w-100px">Semester</th>
+                                <th class="min-w-125px">No Tlfn</th>
+                                <th class="min-w-125px">Tempat Lahir</th>
+                                <th class="min-w-100px">JK</th>
+                                <th class="min-w-100px">Thn Masuk</th>
+                                <th class="min-w-100px">Status</th>
                                 <th class="min-w-240px text-end">Actions</th>
                             </tr>
                         </thead>
@@ -121,7 +122,13 @@
                                     </td>
                                     {{-- status --}}
                                     <td>
-                                        <span class="badge badge-light-success">{{ $student->status }}</span>
+                                        @if ($condisi = $student->status == 'aktif')
+                                            <span class="badge badge-light-success">Aktif</span>
+                                        @elseif ($condisi = $student->status == 'cuti')
+                                            <span class="badge badge-light-warning">Cuti</span>
+                                        @else
+                                            <span class="badge badge-light-danger">Nonaktif</span>
+                                        @endif
                                     </td>
                                     {{-- button aksi --}}
                                     <td class="text-end">

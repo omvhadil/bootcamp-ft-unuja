@@ -1185,7 +1185,8 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="{{ route('mahasiswa') }}">
+                    <a class="menu-link {{ Request::url() == url('mahasiswa') ? 'active' : '' }}"
+                        href="{{ route('mahasiswa') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/communication/com001.svg-->
                             <span class="svg-icon svg-icon-2">
