@@ -5,7 +5,7 @@
 <head>
     <base href="">
     <title>Bootcamp-laravel-B-1 | @yield('title')</title>
-    @include('layouts.style')
+    @include('includes.style')
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -17,7 +17,7 @@
         <!--begin::Page-->
         <div class="page d-flex flex-row flex-column-fluid">
             <!--begin::Aside-->
-            @include('layouts.aside')
+            @include('layouts.sidebar')
             <!--end::Aside-->
             <!--begin::Wrapper-->
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
@@ -2144,9 +2144,9 @@
         </span>
         <!--end::Svg Icon-->
     </div>
-    <!--end::Scrolltop-->
+  <!--end::Scrolltop-->
     <!--end::Main-->
-    @include('layouts.script')
+    @include('includes.script')
 </body>
 <!--end::Body-->
 

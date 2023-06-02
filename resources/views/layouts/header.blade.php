@@ -3,7 +3,7 @@
     <div class="header-brand">
         <!--begin::Logo-->
         <a href="../../demo8/dist/index.html">
-            <img alt="Logo" src="assets/image/logo-1-dark.svg" class="h-25px h-lg-25px" />
+            <img alt="Logo" src="assets/images/logo.png" class="w-100px w-lg-100px" />
         </a>
         <!--end::Logo-->
         <!--begin::Aside minimize-->

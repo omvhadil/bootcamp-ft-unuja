@@ -22,7 +22,7 @@ class MahasiswaController extends Controller
         // return $years;
 
         // return $students;
-        return view('datamaster.mahasiswa.list', $data, compact('students', 'years'));
+        return view('pages.mahasiswa.table_mahasiswa', $data, compact('students', 'years'));
     }
 
     public function create(Request $request) {
