@@ -43,7 +43,7 @@ class MahasiswaController extends Controller
 
         Student::create($data);
 
-        return back();
+        return back()->with('success', 'Task Created Successfully!');
     }
 
     public function destroy(Student $student) {

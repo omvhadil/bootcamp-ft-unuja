@@ -58,7 +58,8 @@
                 {{-- end::Title Dashboard --}}
                 {{-- begin::Landing page --}}
                 <div class="menu-item">
-                    <a class="menu-link {{ Request::url() == url('/') ? 'active' : '' }}" href="/">
+                    <a class="menu-link {{ Request::url() == url('dashboard') ? 'active' : '' }}"
+                        href="{{ route('dashboard') }}">
                         <span class="menu-icon">
                             <span class="svg-icon svg-icon-2">
                                 <i class="ri-dashboard-fill" style="font-size: 1.3rem"></i>
@@ -70,7 +71,8 @@
                 {{-- end::Landing Page --}}
                 {{-- begin::Data Dosen --}}
                 <div class="menu-item">
-                    <a class="menu-link {{ Request::url() == url('/list-dosen') ? 'active' : '' }}" href="/list-dosen">
+                    <a class="menu-link {{ Request::url() == url('dosen') ? 'active' : '' }}"
+                        href="{{ route('dosen') }}">
                         <span class="menu-icon">
                             <span class="svg-icon svg-icon-2">
                                 <i class="ri-presentation-fill" style="font-size: 1.3rem"></i>
@@ -93,7 +95,7 @@
                     </a>
                 </div>
                 {{-- end::Data Mahasiswa --}}
-                {{-- begin::Latihan --}}
+                {{-- begin::CRUD --}}
                 <div class="menu-item">
                     <a class="menu-link {{ Request::url() == url('latihan') ? 'active' : '' }}"
                         href="{{ route('latihan.index') }}">
@@ -102,10 +104,42 @@
                                 <i class="ri-archive-fill" style="font-size: 1.3rem;"></i>
                             </span>
                         </span>
-                        <span class="menu-title">Latihan</span>
+                        <span class="menu-title">CRUD</span>
                     </a>
                 </div>
-                {{-- end::Latihan --}}
+                {{-- end::CRUD --}}
+                {{-- begin::Title Crafted --}}
+                <div class="menu-item">
+                    <div class="menu-content pb-2">
+                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">crafted</span>
+                    </div>
+                </div>
+                {{-- end::Title Crafted --}}
+                {{-- begin::Profile --}}
+                <div class="menu-item">
+                    <a class="menu-link {{ Request::url() == url('profile') ? 'active' : '' }}"
+                        href="{{ route('profile') }}">
+                        <span class="menu-icon">
+                            <span class="svg-icon svg-icon-2">
+                                <i class="ri-shield-user-fill" style="font-size: 1.3rem"></i>
+                            </span>
+                        </span>
+                        <span class="menu-title">Profile</span>
+                    </a>
+                </div>
+                {{-- end::Profile --}}
+                {{-- begin::logout --}}
+                <div class="menu-item">
+                    <a class="menu-link" href="#">
+                        <span class="menu-icon">
+                            <span class="svg-icon svg-icon-2">
+                                <i class="ri-logout-box-fill" style="font-size: 1.3rem"></i>
+                            </span>
+                        </span>
+                        <span class="menu-title">Logout</span>
+                    </a>
+                </div>
+                {{-- end::Logout --}}
             </div>
             <!--end::Menu-->
         </div>

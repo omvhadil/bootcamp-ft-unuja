@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.primary-layout')
 @section('content')
     <div id="kt_content_container" class="container-xxl">
         <!--begin::Table-->

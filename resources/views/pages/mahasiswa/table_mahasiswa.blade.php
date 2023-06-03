@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.primary-layout')
 @section('title', 'list mahasiswa')
 @section('content')
 

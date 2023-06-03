@@ -2,7 +2,7 @@
     <!--begin::Brand-->
     <div class="header-brand">
         <!--begin::Logo-->
-        <a href="../../demo8/dist/index.html">
+        <a href="#">
             <img alt="Logo" src="assets/images/logo.png" class="w-100px w-lg-100px" />
         </a>
         <!--end::Logo-->

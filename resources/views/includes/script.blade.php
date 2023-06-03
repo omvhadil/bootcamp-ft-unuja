@@ -17,5 +17,12 @@
 <script src="{{ url('assets/js/custom/pages/projects/project/project.js') }}"></script>
 <script src="{{ url('assets/js/custom/modals/users-search.js') }}"></script>
 
+<!--Authentication-->
+<script src="assets/js/custom/authentication/sign-in/general.js"></script>
+<script src="assets/js/custom/authentication/sign-up/general.js"></script>
+
+<!--Dashboard-->
+<script src="assets/js/custom/pages/projects/list/list.js"></script>
+
 {{-- setting Modal --}}
 @stack('modal-js')

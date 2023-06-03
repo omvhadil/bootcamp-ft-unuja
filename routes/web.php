@@ -1,13 +1,23 @@
 <?php
 
 use App\Http\Controllers\CRUDController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DosenController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+
+// Login Route
+Route::get('/', [LoginController::class, 'index'])->name('login');
+
+// Register Route
+Route::get('register', [RegisterController::class, 'index'])->name('register');
+
 // Landing Page Route
-Route::get('/', function () {
-    return view('pages.landing_page.dashboard');
-});
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 // Data Mahasiswa Route
 Route::get('mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa');
@@ -15,29 +25,10 @@ Route::post('mahasiswa', [MahasiswaController::class, 'create'])->name('mahasisw
 Route::delete('mahasiswa/{student}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
 
 // Data Dosen Route
-Route::get('/list-dosen', function () {
-    return view('pages.dosen.table_dosen');
-});
+Route::get('dosen', [DosenController::class, 'index'])->name('dosen');
+
+// User Route
+Route::get('profile', [UserController::class, 'index'])->name('profile');
 
 // Latihan Route
 Route::resource('latihan', CRUDController::class);
-
-
-// Route::get('/list-mahasiswa', function () {
-//     return view('datamaster.mahasiswa.list');
-// });
-// Route::get('/sign-in', function () {
-//     return view('sign-in');
-// });
-// Route::get('/sign-up', function () {
-//     return view('sign-up');
-// });
-// Route::get('/password-reset', function () {
-//     return view('password-reset');
-// });
-// Route::get('/new-password', function () {
-//     return view('new-password');
-// });
-// Route::get('/home', function () {
-//     return view('home');
-// });
