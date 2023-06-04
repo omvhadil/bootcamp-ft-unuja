@@ -52,6 +52,9 @@ License: For each use you must have a valid license purchased only from above li
     <!--begin::Javascript-->
     @include('includes.script')
     <!--end::Javascript-->
+    <!--begin::SweetAlert-->
+    @include('sweetalert::alert')
+    <!--end::SweetAlert-->
 </body>
 <!--end::Body-->
 

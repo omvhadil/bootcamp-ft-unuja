@@ -8,7 +8,7 @@
         <div class="aside-user d-flex align-items-sm-center justify-content-center py-5">
             <!--begin::Symbol-->
             <div class="symbol symbol-50px">
-                <img src="assets/image/150-26.jpg" alt="" />
+                <img src="assets/media/avatars/150-26.jpg" alt="" />
             </div>
             <!--end::Symbol-->
             <!--begin::Wrapper-->
@@ -130,14 +130,17 @@
                 {{-- end::Profile --}}
                 {{-- begin::logout --}}
                 <div class="menu-item">
-                    <a class="menu-link" href="#">
-                        <span class="menu-icon">
-                            <span class="svg-icon svg-icon-2">
-                                <i class="ri-logout-box-fill" style="font-size: 1.3rem"></i>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" class="menu-link btn px-0">
+                            <span class="menu-icon">
+                                <span class="svg-icon svg-icon-2">
+                                    <i class="ri-logout-box-fill" style="font-size: 1.3rem"></i>
+                                </span>
                             </span>
-                        </span>
-                        <span class="menu-title">Logout</span>
-                    </a>
+                            <span class="menu-title">Logout</span>
+                        </button>
+                    </form>
                 </div>
                 {{-- end::Logout --}}
             </div>

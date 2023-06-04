@@ -15,7 +15,8 @@
                 <!--begin::Wrapper-->
                 <div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
                     <!--begin::Form-->
-                    <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="#">
+                    <form class="form w-100" action="{{ route('login.post') }}" method="post">
+                        @csrf
                         <!--begin::Heading-->
                         <div class="text-center mb-10">
                             <!--begin::Title-->
@@ -59,13 +60,13 @@
                         <!--end::Input group-->
                         <!--begin::Actions-->
                         <div class="text-center">
-                            <a href="{{ route('dashboard') }} " class="btn btn-primary">Login</a>
+                            {{-- <a href="{{ route('dashboard') }} " class="btn btn-primary">Login</a> --}}
                             <!--begin::Submit button-->
-                            {{-- <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
-                                <span class="indicator-label">Continue</span>
+                            <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
+                                <span class="indicator-label">Login</span>
                                 <span class="indicator-progress">Please wait...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                            </button> --}}
+                            </button>
                             <!--end::Submit button-->
                         </div>
                         <!--end::Actions-->
