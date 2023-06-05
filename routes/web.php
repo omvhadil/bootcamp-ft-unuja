@@ -6,7 +6,7 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\MahasiswaController;
-use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +23,7 @@ Route::middleware(['guest'])->group(function () {
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::post('logout', [LogoutController::class])->name('logout');
+    Route::post('logout', LogoutController::class)->name('logout');
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

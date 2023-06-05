@@ -1,0 +1,31 @@
+PHP ARTISAN YANG SERING DI PAKAI
+
+// untuk membuat controller
+php artisan make:controller LoginController
+
+// untuk membuat migrations
+php artisan make:migration create_login_table
+
+// untuk membuat model
+php artisan make:model Login
+
+// untuk membuat Components
+php artisan make:component applayout
+
+php artisan make:model Student -mcfs
+-m = migration
+-c = controller
+-f = factory
+-s = Seeder
+
+
+// cara menggunakan server local
+
+php artisan serve --host 192.168.1.101
+
+Sekarang dari komputer lain, Anda dapat mengetik: http://192.168.1.101
+Jangan lupa untuk mengganti IP dengan IP lokal Anda sendiri.
+
+Catatan singkat untuk pemula: Di Windows, Anda dapat melihat ip komputer Anda
+dengan mengetik "ipconfig" (tanpa tanda kutip) di baris perintah.
+Gunakan ip itu sebagai ganti 192.168.1.101 (yang merupakan contoh).

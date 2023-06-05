@@ -16,11 +16,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // menambahkan data dummy ke database yang di ambil dari factory
         Student::factory(20)->create();
+
+        // menambahkan data admin ke database secara manual
         User::create([
             'fullname' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('admin'),
         ]);
+
+
+
     }
 }
