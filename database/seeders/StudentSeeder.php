@@ -16,25 +16,63 @@ class StudentSeeder extends Seeder
      */
     public function run()
     {
-        // Create 20 dummy student
-        Student::create([
+        // Create dummy student
+        $data = [
             [
-            'nim' => '2031710011',
-            'name' => 'Muhammad Rizky Ramadhan',
-            'class' => 'MI-2E',
-            'department' => 'JTI',
-            'phone_number' => '081234567890',
-            'address' => 'Jl. Raya Kedungbanteng No. 108',
+            'nim' => '1921400001',
+            'name' => 'Fadilatur Rohman',
+            'email' => 'fadilaturrohman@gmail.com',
+            'alamat' => 'Jl. Raya Kedungbanteng No. 1',
+            'major_id' => 1,
+            'semester' => 4,
+            'no_hp' => '081234567890',
+            'tempat_lahir' => 'Kediri',
+            'jk' => 1,
+            'tahun_masuk' => 2019,
+            'status' => 'aktif',
             ],
             [
-            'nim' => '2031710012',
-            'name' => 'Muhammad Rizky Ramadhan',
-            'class' => 'MI-2E',
-            'department' => 'JTI',
-            'phone_number' => '081234567890',
-            'address' => 'Jl. Raya Kedungbanteng No. 108',
+            'nim' => '1921400002',
+            'name' => 'Abdur Rohman',
+            'email' => 'abdurrohman@gmail.com',
+            'alamat' => 'Jl. Raya Kedungbanteng No. 1',
+            'major_id' => 1,
+            'semester' => 4,
+            'no_hp' => '081234567890',
+            'tempat_lahir' => 'Kediri',
+            'jk' => 1,
+            'tahun_masuk' => 2019,
+            'status' => 'nonaktif',
             ],
-        ]);
-
+            [
+            'nim' => '1921400003',
+            'name' => 'Andi Bayu Setiawan',
+            'email' => 'andibayu@gmail.com',
+            'alamat' => 'Jl. Raya Kedungbanteng No. 1',
+            'major_id' => 3,
+            'semester' => 4,
+            'no_hp' => '081234567890',
+            'tempat_lahir' => 'Kediri',
+            'jk' => 1,
+            'tahun_masuk' => 2019,
+            'status' => 'aktif',
+            ],
+            [
+            'nim' => '1921400004',
+            'name' => 'Saiful Rizal',
+            'email' => 'saiful@gmail.com',
+            'alamat' => 'Jl. Raya Kedungbanteng No. 1',
+            'major_id' => 2,
+            'semester' => 4,
+            'no_hp' => '081234567890',
+            'tempat_lahir' => 'Kediri',
+            'jk' => 1,
+            'tahun_masuk' => 2019,
+            'status' => 'cuti',
+            ],
+        ];
+        foreach ($data as $value) {
+            Student::create($value);
+        }
     }
 }

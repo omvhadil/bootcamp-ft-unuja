@@ -77,25 +77,6 @@
                                 </div>
                             @enderror
                         </div>
-                        {{-- semester --}}
-                        <div class="d-flex flex-column mb-5 fv-row">
-                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                <span class="required">Semester</span>
-                            </label>
-                            <select data-control="select2" data-dropdown-parent="#kt_modal_new_address"
-                                data-placeholder="Pilih Semester..." name="semester"
-                                class="form-select form-select-solid" value="{{ old('semester') }}" />
-                            <option disabled selected>Pilih Semester...</option>
-                            @foreach ($semester as $item)
-                                <option value="{{ $item }}">{{ $item }} </option>
-                            @endforeach
-                            </select>
-                            @error('semester')
-                                <div class="text-danger mt-2">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
                         {{-- no_Hp --}}
                         <div class="d-flex flex-column mb-5 fv-row">
                             <label class="required fs-5 fw-bold mb-2">No Hp</label>
@@ -113,6 +94,41 @@
                             <input class="form-control form-control-solid" placeholder="Tempat Lahir" type="text"
                                 name="tempat_lahir" value="{{ old('tempat_lahir') }}" />
                             @error('tempat_lahir')
+                                <div class="text-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        {{-- jurusan --}}
+                        <div class="d-flex flex-column mb-5 fv-row">
+                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                <span class="required">Jurusan</span>
+                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                    title="silahkan pilih jurusan yang kamu sukai"></i>
+                            </label>
+                            <select data-control="select2" data-dropdown-parent="#kt_modal_new_address"
+                                data-placeholder="Pilih Jurusan..." class="form-select form-select-solid"
+                                name="major_id">
+                                <option selected disabled>Pilih Jurusan...</option>
+                                @foreach ($majors as $item)
+                                    <option value="{{ $item->id }}">{{ $item->major_name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        {{-- semester --}}
+                        <div class="d-flex flex-column mb-5 fv-row">
+                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                <span class="required">Semester</span>
+                            </label>
+                            <select data-control="select2" data-dropdown-parent="#kt_modal_new_address"
+                                data-placeholder="Pilih Semester..." name="semester"
+                                class="form-select form-select-solid" value="{{ old('semester') }}" />
+                            <option disabled selected>Pilih Semester...</option>
+                            @foreach ($semester as $item)
+                                <option value="{{ $item }}">{{ $item }} </option>
+                            @endforeach
+                            </select>
+                            @error('semester')
                                 <div class="text-danger mt-2">
                                     {{ $message }}
                                 </div>
@@ -142,9 +158,9 @@
                                 <span class="required">Tahun Masuk</span>
                             </label>
                             <select data-control="select2" data-dropdown-parent="#kt_modal_new_address"
-                                data-placeholder="Pilih Jenis Kelamin..." class="form-select form-select-solid"
+                                data-placeholder="Pilih Tahun Masuk..." class="form-select form-select-solid"
                                 name="tahun_masuk" value="{{ old('tahun_masuk') }}" />
-                            <option disabled selected>Pilih Jenis Kelamin...</option>
+                            <option disabled selected>Pilih Tahun Masuk...</option>
                             @foreach ($years as $item)
                                 <option value="{{ $item }}">{{ $item }}</option>
                             @endforeach
@@ -156,22 +172,6 @@
                             @enderror
                         </div>
 
-                        {{-- jurusan --}}
-                        {{-- <div class="d-flex flex-column mb-5 fv-row">
-                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                <span class="required">Jurusan</span>
-                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                    title="silahkan pilih jurusan yang kamu sukai"></i>
-                            </label>
-                            <select name="country" data-control="select2"
-                                data-dropdown-parent="#kt_modal_new_address" data-placeholder="Pilih Jurusan..."
-                                class="form-select form-select-solid">
-                                <option value="">Pilih Jurusan...</option>
-                                <option value="IF">Tehnik Informatika</option>
-                                <option value="TE">Tehnik Elektro</option>
-                                <option value="TI">Tehnik Informasi</option>
-                            </select>
-                        </div> --}}
                     </div>
                     <!--end::Scroll-->
                 </div>

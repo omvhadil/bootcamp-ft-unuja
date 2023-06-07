@@ -21,7 +21,7 @@ class Student extends Model
     // untuk menentukan relasi
     public function major()
     {
-        // untuk menentukan relasi one to many
+        // belongsto() = untuk menentukan relasi one to many
         return $this->belongsTo(Major::class);
     }
 }

@@ -14,7 +14,7 @@ class Major extends Model
     // membuat relasi dengan model student
     public function student()
     {
-        // hasMany = relasi one to many
+        // hasMany() = untuk menentukan relasi one to many
         return $this->hasMany(Student::class);
     }
 }

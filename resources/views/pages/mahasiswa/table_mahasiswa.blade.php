@@ -190,9 +190,10 @@
                                     {{-- button aksi --}}
                                     <td class="text-end">
                                         <div class="d-inline-flex gap-1">
-                                            <a href="#"
+                                            <a href=""
                                                 class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                                data-bs-toggle="modal" data-bs-target="#kt_modal_edit_mahasiswa">
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#kt_modal_edit_mahasiswa{{ $student->nim }}">
                                                 <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                 <span class="svg-icon svg-icon-3">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -208,7 +209,7 @@
                                                 <!--end::Svg Icon-->
                                             </a>
                                             <form action="/mahasiswa/{{ $student->nim }}" method="post"
-                                                onclick="return confirm('Yakin Broo...')">
+                                                onclick="return confirm('Anda yakin akan menghapus mahasiswa ini?')">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit"
@@ -234,6 +235,9 @@
                                         </div>
                                     </td>
                                 </tr>
+                                <!--begin::Modal - Edit Mahasiswa-->
+                                @include('pages.mahasiswa.edit')
+                                <!--end::Modal - Edit Mahasiswa-->
                             @endforeach
                         </tbody>
                         <!--end::Body-->
@@ -250,9 +254,7 @@
     <!--begin::Modal - Add Mahasiswa-->
     @include('pages.mahasiswa.create')
     <!--end::Modal - Add Mahasiswa-->
-    <!--begin::Modal - Edit Mahasiswa-->
-    @include('pages.mahasiswa.edit')
-    <!--end::Modal - Edit Mahasiswa-->
+
 
     @push('modal-js')
         @if ($errors->any())

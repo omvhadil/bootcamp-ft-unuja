@@ -30,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa');
     Route::post('mahasiswa', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
     Route::delete('mahasiswa/{student}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
+    Route::put('mahasiswa/{student}', [MahasiswaController::class, 'update'])->name('mahasiswa.update');
 
     Route::get('dosen', [DosenController::class, 'index'])->name('dosen');
 

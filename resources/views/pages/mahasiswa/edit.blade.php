@@ -1,11 +1,13 @@
-<div class="modal fade" id="kt_modal_edit_mahasiswa" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="kt_modal_edit_mahasiswa{{ $student->nim }}" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-650px">
         <!--begin::Modal content-->
         <div class="modal-content">
             <!--begin::Form-->
-            <form class="form" action="#" method="post" id="kt_modal_new_address_form">
+            <form class="form" action="{{ route('mahasiswa.update', $student->nim) }}" method="post"
+                id="kt_modal_new_address_form">
                 @csrf
+                @method('put')
                 <!--begin::Modal header-->
                 <div class="modal-header" id="kt_modal_new_address_header">
                     <h2>Edit Mahasiswa</h2>
@@ -37,7 +39,7 @@
                             <label class="required fs-5 fw-bold mb-2">NIM</label>
                             <input
                                 class="form-control form-control-solid @error('nim') is-invalid border-1 border-danger @enderror"
-                                placeholder="NIM" name="nim" value="{{ old('nim') }}" />
+                                placeholder="NIM" name="nim" value="{{ $student->nim }}" />
                             @error('nim')
                                 <div class="text-danger mt-2">
                                     {{ $message }}
@@ -48,7 +50,7 @@
                         <div class="d-flex flex-column mb-5 fv-row">
                             <label class="required fs-5 fw-bold mb-2">Full Name</label>
                             <input class="form-control form-control-solid" placeholder="Full Name" name="name"
-                                value="{{ old('name') }}" />
+                                value="{{ $student->name }}" />
                             @error('name')
                                 <div class="text-danger mt-2">
                                     {{ $message }}
@@ -59,7 +61,7 @@
                         <div class="d-flex flex-column mb-5 fv-row">
                             <label class="required fs-5 fw-bold mb-2">Email</label>
                             <input class="form-control form-control-solid" placeholder="Email" name="email"
-                                value="{{ old('email') }}" />
+                                value="{{ $student->email }}" />
                             @error('email')
                                 <div class="text-danger mt-2">
                                     {{ $message }}
@@ -70,27 +72,8 @@
                         <div class="d-flex flex-column mb-5 fv-row">
                             <label class="required fs-5 fw-bold mb-2">Alamat</label>
                             <input class="form-control form-control-solid" placeholder="Alamat" name="alamat"
-                                value="{{ old('alamat') }}" />
+                                value="{{ $student->alamat }}" />
                             @error('alamat')
-                                <div class="text-danger mt-2">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        {{-- semester --}}
-                        <div class="d-flex flex-column mb-5 fv-row">
-                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                <span class="required">Semester</span>
-                            </label>
-                            <select data-control="select2" data-dropdown-parent="#kt_modal_new_address"
-                                data-placeholder="Pilih Semester..." name="semester"
-                                class="form-select form-select-solid" value="{{ old('semester') }}" />
-                            <option disabled selected>Pilih Semester...</option>
-                            @foreach ($semester as $item)
-                                <option value="{{ $item }}">{{ $item }} </option>
-                            @endforeach
-                            </select>
-                            @error('semester')
                                 <div class="text-danger mt-2">
                                     {{ $message }}
                                 </div>
@@ -100,7 +83,7 @@
                         <div class="d-flex flex-column mb-5 fv-row">
                             <label class="required fs-5 fw-bold mb-2">No Hp</label>
                             <input class="form-control form-control-solid" placeholder="No Hp" type="text"
-                                name="no_hp" value="{{ old('no_hp') }}" />
+                                name="no_hp" value="{{ $student->no_hp }}" />
                             @error('no_hp')
                                 <div class="text-danger mt-2">
                                     {{ $message }}
@@ -111,8 +94,43 @@
                         <div class="d-flex flex-column mb-5 fv-row">
                             <label class="required fs-5 fw-bold mb-2">Tempat Lahir</label>
                             <input class="form-control form-control-solid" placeholder="Tempat Lahir" type="text"
-                                name="tempat_lahir" value="{{ old('tempat_lahir') }}" />
+                                name="tempat_lahir" value="{{ $student->tempat_lahir }}" />
                             @error('tempat_lahir')
+                                <div class="text-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        {{-- jurusan --}}
+                        <div class="d-flex flex-column mb-5 fv-row">
+                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                <span class="required">Jurusan</span>
+                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                    title="silahkan pilih jurusan yang kamu sukai"></i>
+                            </label>
+                            <select data-control="select2"
+                                data-dropdown-parent="#kt_modal_edit_mahasiswa{{ $student->nim }}"
+                                data-placeholder="Pilih Jurusan..." class="form-select form-select-solid"
+                                name="major_id" value="{{ $student->major->id }}">
+                                @foreach ($majors as $item)
+                                    <option value="{{ $item->id }}">{{ $item->major_name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        {{-- semester --}}
+                        <div class="d-flex flex-column mb-5 fv-row">
+                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                <span class="required">Semester</span>
+                            </label>
+                            <select data-control="select2"
+                                data-dropdown-parent="#kt_modal_edit_mahasiwa{{ $student->nim }}"
+                                data-placeholder="Pilih Semester..." name="semester"
+                                class="form-select form-select-solid" value="{{ $student->semester }}" />
+                            @foreach ($semester as $item)
+                                <option value="{{ $item }}">{{ $item }} </option>
+                            @endforeach
+                            </select>
+                            @error('semester')
                                 <div class="text-danger mt-2">
                                     {{ $message }}
                                 </div>
@@ -123,10 +141,10 @@
                             <label class="d-flex align-items-center fs-5 fw-bold mb-2">
                                 <span class="required">Jenis Kelamin</span>
                             </label>
-                            <select data-control="select2" data-dropdown-parent="#kt_modal_new_address"
+                            <select data-control="select2"
+                                data-dropdown-parent="#kt_modal_edit_mahasiswa{{ $student->nim }}"
                                 data-placeholder="Pilih Jenis Kelamin..." class="form-select form-select-solid"
-                                name="jk" value="{{ old('jk') }}" />
-                            <option value="">Pilih Jenis Kelamin...</option>
+                                name="jk" value="{{ $student->jk }}" />
                             <option value="1">Laki-laki </option>
                             <option value="0">Perempuan</option>
                             </select>
@@ -141,10 +159,10 @@
                             <label class="d-flex align-items-center fs-5 fw-bold mb-2">
                                 <span class="required">Tahun Masuk</span>
                             </label>
-                            <select data-control="select2" data-dropdown-parent="#kt_modal_new_address"
-                                data-placeholder="Pilih Jenis Kelamin..." class="form-select form-select-solid"
-                                name="tahun_masuk" value="{{ old('tahun_masuk') }}" />
-                            <option disabled selected>Pilih Jenis Kelamin...</option>
+                            <select data-control="select2"
+                                data-dropdown-parent="#kt_modal_edit_mahasiswa{{ $student->nim }}"
+                                data-placeholder="Pilih Tahun Masuk..." class="form-select form-select-solid"
+                                name="tahun_masuk" value="{{ $student->tahun_masuk }}" />
                             @foreach ($years as $item)
                                 <option value="{{ $item }}">{{ $item }}</option>
                             @endforeach
@@ -155,23 +173,26 @@
                                 </div>
                             @enderror
                         </div>
-
-                        {{-- jurusan --}}
-                        {{-- <div class="d-flex flex-column mb-5 fv-row">
+                        {{-- Status --}}
+                        <div class="d-flex flex-column mb-5 fv-row">
                             <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                <span class="required">Jurusan</span>
-                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                    title="silahkan pilih jurusan yang kamu sukai"></i>
+                                <span class="required">Status</span>
                             </label>
-                            <select name="country" data-control="select2"
-                                data-dropdown-parent="#kt_modal_new_address" data-placeholder="Pilih Jurusan..."
-                                class="form-select form-select-solid">
-                                <option value="">Pilih Jurusan...</option>
-                                <option value="IF">Tehnik Informatika</option>
-                                <option value="TE">Tehnik Elektro</option>
-                                <option value="TI">Tehnik Informasi</option>
+                            <select data-control="select2"
+                                data-dropdown-parent="#kt_modal_edit_mahasiswa{{ $student->nim }}"
+                                data-placeholder="Pilih Status..." class="form-select form-select-solid"
+                                name="status" value="{{ $student->status }}" />
+                            <option value="aktif">Aktif</option>
+                            <option value="nonaktif">Nonaktif</option>
+                            <option value="cuti">Cuti</option>
                             </select>
-                        </div> --}}
+                            @error('status')
+                                <div class="text-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
                     </div>
                     <!--end::Scroll-->
                 </div>
