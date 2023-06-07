@@ -1,4 +1,5 @@
 @extends('layouts.primary-layout')
+@section('title', 'Profile')
 @section('content')
     <!--begin::Container-->
     <div id="kt_content_container" class="container-xxl">

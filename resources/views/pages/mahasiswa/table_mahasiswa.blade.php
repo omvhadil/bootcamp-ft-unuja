@@ -1,5 +1,5 @@
 @extends('layouts.primary-layout')
-@section('title', 'list mahasiswa')
+@section('title', 'Data Mahasiswa')
 @section('content')
 
     <div id="kt_content_container" class="container-xxl">
@@ -97,6 +97,7 @@
                                 </th>
                                 <th class="min-w-100px">NIM</th>
                                 <th class="min-w-125px">Nama</th>
+                                <th class="min-w-125px">Jurusan</th>
                                 <th class="min-w-125px">Email</th>
                                 <th class="min-w-125px">ALamat</th>
                                 <th class="min-w-100px">Semester</th>
@@ -128,6 +129,12 @@
                                     <td>
                                         <a href="#"
                                             class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $student->name }}
+                                        </a>
+                                    </td>
+                                    {{-- Major --}}
+                                    <td>
+                                        <a href="#"
+                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $student->major->major_name }}
                                         </a>
                                     </td>
                                     {{-- email --}}

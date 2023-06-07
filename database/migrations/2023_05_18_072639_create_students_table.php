@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->text('alamat');
+            $table->string('major_id');
             $table->integer('semester');
             $table->string('no_hp');
             $table->string('tempat_lahir');

@@ -18,10 +18,11 @@
                     <!--begin::Info-->
                     <div class="flex-grow-1 me-2">
                         <!--begin::Username-->
-                        <a href="#" class="text-white text-hover-primary fs-6 fw-bold">Fadil Kuy</a>
+                        <a href="#"
+                            class="text-white text-hover-primary fs-6 fw-bold">{{ Auth::user()->fullname }}</a>
                         <!--end::Username-->
                         <!--begin::Description-->
-                        <span class="text-gray-600 fw-bold d-block fs-8 mb-1">Laravel Dev</span>
+                        {{-- <span class="text-gray-600 fw-bold d-block fs-8 mb-1">Laravel Dev</span> --}}
                         <!--end::Description-->
                         <!--begin::Label-->
                         <div class="d-flex align-items-center text-success fs-9">
@@ -95,8 +96,15 @@
                     </a>
                 </div>
                 {{-- end::Data Mahasiswa --}}
-                {{-- begin::CRUD --}}
+                {{-- begin::Title Crafted --}}
                 <div class="menu-item">
+                    <div class="menu-content pb-2">
+                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">crafted</span>
+                    </div>
+                </div>
+                {{-- end::Title Crafted --}}
+                {{-- begin::CRUD --}}
+                {{-- <div class="menu-item">
                     <a class="menu-link {{ Request::url() == url('latihan') ? 'active' : '' }}"
                         href="{{ route('latihan.index') }}">
                         <span class="menu-icon">
@@ -106,15 +114,8 @@
                         </span>
                         <span class="menu-title">CRUD</span>
                     </a>
-                </div>
+                </div> --}}
                 {{-- end::CRUD --}}
-                {{-- begin::Title Crafted --}}
-                <div class="menu-item">
-                    <div class="menu-content pb-2">
-                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">crafted</span>
-                    </div>
-                </div>
-                {{-- end::Title Crafted --}}
                 {{-- begin::Profile --}}
                 <div class="menu-item">
                     <a class="menu-link {{ Request::url() == url('profile') ? 'active' : '' }}"
@@ -132,7 +133,7 @@
                 <div class="menu-item">
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
-                        <button type="submit" class="menu-link btn px-0">
+                        <button type="submit" class="menu-link bg-transparent border-0">
                             <span class="menu-icon">
                                 <span class="svg-icon svg-icon-2">
                                     <i class="ri-logout-box-fill" style="font-size: 1.3rem"></i>

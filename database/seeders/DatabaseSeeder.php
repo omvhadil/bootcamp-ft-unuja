@@ -26,6 +26,9 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('admin'),
         ]);
 
+        // menambahkan data dummy ke database yang di ambil dari studentseeder
+         $this->call(MajorSeeder::class);
+
 
 
     }

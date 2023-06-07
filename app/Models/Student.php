@@ -17,4 +17,11 @@ class Student extends Model
     public $incrementing = false;
     // memasukkan semua field yang dapat diisi
     protected $guarded = [];
+
+    // untuk menentukan relasi
+    public function major()
+    {
+        // untuk menentukan relasi one to many
+        return $this->belongsTo(Major::class);
+    }
 }

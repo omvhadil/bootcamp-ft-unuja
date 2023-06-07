@@ -1,5 +1,5 @@
 @extends('layouts.primary-layout')
-@section('title', 'list dosen')
+@section('title', 'Table dosen')
 @section('content')
     <div id="kt_content_container" class="container-xxl">
         <!--begin::Tables Widget 13-->

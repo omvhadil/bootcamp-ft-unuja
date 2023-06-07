@@ -4,7 +4,7 @@
 
 <head>
     <base href="">
-    <title>Bootcamp-laravel-B-1 | @yield('title')</title>
+    <title>Alabim | @yield('title')</title>
     @include('includes.style')
 </head>
 <!--end::Head-->

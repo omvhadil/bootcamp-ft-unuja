@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Major;
 use App\Models\Student;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -29,6 +30,8 @@ class StudentFactory extends Factory
             'name' => $this->faker->name(),
             // unique() = membuat email yang unik
             'email' => $this->faker->unique()->email(),
+            // all() = membuat semua data dari table major
+            'major_id' => $this->faker->randomElement(['1', '2', '3', '4', '5']),
             // address() = membuat alamat random
             'alamat' => $this->faker->address(),
             // randomElement() = membuat random element dari array

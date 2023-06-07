@@ -23,9 +23,9 @@
                             <h1 class="text-dark mb-3">Sign In to Alabim</h1>
                             <!--end::Title-->
                             <!--begin::Link-->
-                            <div class="text-gray-400 fw-bold fs-4">New Here?
+                            {{-- <div class="text-gray-400 fw-bold fs-4">New Here?
                                 <a href="{{ route('register') }}" class="link-primary fw-bolder">Create an Account</a>
-                            </div>
+                            </div> --}}
                             <!--end::Link-->
                         </div>
                         <!--begin::Heading-->

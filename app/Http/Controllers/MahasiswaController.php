@@ -9,7 +9,7 @@ class MahasiswaController extends Controller
 {
     public function index(){
         // all() = mengambil semua data dari database
-        $students = Student::all();
+        $students = Student::with('major')->get();
 
         // membuat variabel data semester
         $data['semester'] = [1, 2, 3, 4, 5, 6, 7, 8];

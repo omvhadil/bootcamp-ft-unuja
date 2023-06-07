@@ -3,6 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-4 mx-auto">
+                // action menggunakan route name
                 <form action="{{ route('latihan.update', $show->id) }}" method="post">
                     @csrf
                     @method('PUT')
