@@ -236,7 +236,7 @@
                                     </td>
                                 </tr>
                                 <!--begin::Modal - Edit Mahasiswa-->
-                                @include('pages.mahasiswa.edit')
+                                @include('pages.mahasiswa.edit', ['student' => $student])
                                 <!--end::Modal - Edit Mahasiswa-->
                             @endforeach
                         </tbody>
