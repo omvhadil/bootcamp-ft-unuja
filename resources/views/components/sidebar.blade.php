@@ -79,7 +79,7 @@
                                 <i class="ri-presentation-fill" style="font-size: 1.3rem"></i>
                             </span>
                         </span>
-                        <span class="menu-title">Data Dosen</span>
+                        <span class="menu-title">Teacher Data</span>
                     </a>
                 </div>
                 {{-- end::Data Dosen --}}
@@ -92,7 +92,7 @@
                                 <i class="ri-graduation-cap-fill" style="font-size: 1.3rem;"></i>
                             </span>
                         </span>
-                        <span class="menu-title">Data Mahasiswa</span>
+                        <span class="menu-title">Student Data</span>
                     </a>
                 </div>
                 {{-- end::Data Mahasiswa --}}

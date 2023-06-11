@@ -10,7 +10,7 @@
                 <!--begin::Card title-->
                 <div class="card-title flex-column">
                     <h3 class="fw-bolder mb-1">Data Mahasiswa</h3>
-                    <div class="fs-6 text-gray-400">Total : -</div>
+                    <div class="fs-6 text-gray-400">Total : {{ $total_data }}</div>
                 </div>
                 <!--begin::Card title-->
                 <!--begin::Card toolbar-->
@@ -32,30 +32,6 @@
                             <!--end::Svg Icon-->Add Mahasiswa
                         </a>
                     </div>
-                    <!--begin::Select-->
-                    <div class="me-6 my-1">
-                        <select id="kt_filter_year" name="year" data-control="select2" data-hide-search="true"
-                            class="w-125px form-select form-select-solid form-select-sm">
-                            <option value="All" selected="selected">All time</option>
-                            <option value="thisyear">This year</option>
-                            <option value="thismonth">This month</option>
-                            <option value="lastmonth">Last month</option>
-                            <option value="last90days">Last 90 days</option>
-                        </select>
-                    </div>
-                    <!--end::Select-->
-                    <!--begin::Select-->
-                    <div class="me-4 my-1">
-                        <select id="kt_filter_orders" name="orders" data-control="select2" data-hide-search="true"
-                            class="w-125px form-select form-select-solid form-select-sm">
-                            <option value="All" selected="selected">All Orders</option>
-                            <option value="Approved">Approved</option>
-                            <option value="Declined">Declined</option>
-                            <option value="In Progress">In Progress</option>
-                            <option value="In Transit">In Transit</option>
-                        </select>
-                    </div>
-                    <!--end::Select-->
                     <!--begin::Search-->
                     <div class="d-flex align-items-center position-relative my-1">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
@@ -112,7 +88,7 @@
                         <!--end::Head-->
                         <!--begin::Body-->
                         <tbody class="fs-6">
-                            @foreach ($students as $student)
+                            @foreach ($students as $item)
                                 <tr>
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
@@ -122,50 +98,49 @@
                                     </td>
                                     {{-- nim --}}
                                     <td>
-                                        <a href="#"
-                                            class="text-dark text-hover-primary fs-6">{{ $student->nim }}</a>
+                                        <a href="#" class="text-dark text-hover-primary fs-6">{{ $item->nim }}</a>
                                     </td>
                                     {{-- nama --}}
                                     <td>
                                         <a href="#"
-                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $student->name }}
+                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $item->name }}
                                         </a>
                                     </td>
                                     {{-- Major --}}
                                     <td>
                                         <a href="#"
-                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $student->major->major_name }}
+                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $item->major->major_name }}
                                         </a>
                                     </td>
                                     {{-- email --}}
                                     <td>
                                         <a href="#"
-                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $student->email }}</a>
+                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $item->email }}</a>
                                     </td>
                                     {{-- alamat --}}
                                     <td>
                                         <a href="#"
-                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $student->alamat }}</a>
+                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $item->alamat }}</a>
                                     </td>
                                     {{-- semester --}}
                                     <td>
                                         <a href="#"
-                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $student->semester }}</a>
+                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $item->semester }}</a>
                                     </td>
                                     {{-- No Hp --}}
                                     <td>
                                         <a href="#"
-                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $student->no_hp }}</a>
+                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $item->no_hp }}</a>
                                     </td>
                                     {{-- Tempat lahir --}}
                                     <td>
                                         <a href="#"
-                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $student->tempat_lahir }}</a>
+                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $item->tempat_lahir }}</a>
                                     </td>
                                     {{-- JK --}}
                                     <td>
                                         <a href="#" class="text-dark text-hover-primary d-block mb-1 fs-6">
-                                            @if ($condition = $student->jk == 1)
+                                            @if ($condition = $item->jk == 1)
                                                 laki-laki
                                             @else
                                                 Perempuan
@@ -175,13 +150,13 @@
                                     {{-- thn masuk --}}
                                     <td>
                                         <a href="#"
-                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $student->tahun_masuk }}</a>
+                                            class="text-dark text-hover-primary d-block mb-1 fs-6">{{ $item->tahun_masuk }}</a>
                                     </td>
                                     {{-- status --}}
                                     <td>
-                                        @if ($condisi = $student->status == 'aktif')
+                                        @if ($condisi = $item->status == 'aktif')
                                             <span class="badge badge-light-success">Aktif</span>
-                                        @elseif ($condisi = $student->status == 'cuti')
+                                        @elseif ($condisi = $item->status == 'cuti')
                                             <span class="badge badge-light-warning">Cuti</span>
                                         @else
                                             <span class="badge badge-light-danger">Nonaktif</span>
@@ -193,7 +168,7 @@
                                             <a href=""
                                                 class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
                                                 data-bs-toggle="modal"
-                                                data-bs-target="#kt_modal_edit_mahasiswa{{ $student->nim }}">
+                                                data-bs-target="#kt_modal_edit_mahasiswa{{ $item->nim }}">
                                                 <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                 <span class="svg-icon svg-icon-3">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -208,7 +183,7 @@
                                                 </span>
                                                 <!--end::Svg Icon-->
                                             </a>
-                                            <form action="/mahasiswa/{{ $student->nim }}" method="post"
+                                            <form action="/mahasiswa/{{ $item->nim }}" method="post"
                                                 onclick="return confirm('Anda yakin akan menghapus mahasiswa ini?')">
                                                 @csrf
                                                 @method('delete')
@@ -236,7 +211,7 @@
                                     </td>
                                 </tr>
                                 <!--begin::Modal - Edit Mahasiswa-->
-                                @include('pages.mahasiswa.edit', ['student' => $student])
+                                @include('pages.mahasiswa.edit', ['student' => $item])
                                 <!--end::Modal - Edit Mahasiswa-->
                             @endforeach
                         </tbody>

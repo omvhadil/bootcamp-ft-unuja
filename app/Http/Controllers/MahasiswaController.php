@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
 {
-    public function index()
+    public function index(Student $student)
     {
         // all() = mengambil semua data dari table student
         $students = Student::with('major')->get();
@@ -27,7 +27,10 @@ class MahasiswaController extends Controller
             $years[] = $i;
         }
 
-        return view('pages.mahasiswa.table_mahasiswa', $data, compact('students', 'years', 'majors'));
+        // total data
+        $total_data = $students->count();
+
+        return view('pages.mahasiswa.table_mahasiswa', $data, compact('students', 'years', 'majors', 'total_data'));
     }
 
     public function create(Request $request)
@@ -58,23 +61,7 @@ class MahasiswaController extends Controller
 
     public function edit(Student $student)
     {
-        // all() = mengambil semua data dari table major
-        $majors = Major::all();
-
-        // membuat variabel data semester
-        $data['semester'] = [1, 2, 3, 4, 5, 6, 7, 8];
-
-        // membuat variabel data tahun masuk
-        $years = [];
-
-        // membuat perulangan untuk menampilkan tahun masuk
-        for ($i = 2018; $i <= date('Y'); $i++) {
-            $years[] = $i;
-        }
-
-        // edit
-        $student = Student::with('major')->first();
-        return view('pages.mahasiswa.edit_mahasiswa', $data, compact('student', 'years', 'majors'));
+       //
     }
 
     public function update(Student $student)
@@ -91,6 +78,7 @@ class MahasiswaController extends Controller
             'tempat_lahir' => ['required', 'string'],
             'jk' => 'required',
             'tahun_masuk' => 'required',
+            'status' => 'required'
         ]);
 
 

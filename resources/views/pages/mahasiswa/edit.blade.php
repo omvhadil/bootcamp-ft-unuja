@@ -105,15 +105,14 @@
                         <div class="d-flex flex-column mb-5 fv-row">
                             <label class="d-flex align-items-center fs-5 fw-bold mb-2">
                                 <span class="required">Jurusan</span>
-                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                    title="silahkan pilih jurusan yang kamu sukai"></i>
                             </label>
-                            <select data-control="select2"
-                                data-dropdown-parent="#kt_modal_edit_mahasiswa{{ $student->nim }}"
-                                data-placeholder="Pilih Jurusan..." class="form-select form-select-solid"
-                                name="major_id" value="{{ $student->major->id }}">
+                            <select name="major_id" data-control="select2" data-placeholder="Pilih Jurusan..."
+                                class="form-select form-select-solid">
+                                <option value="">Jurusan... </option>
                                 @foreach ($majors as $item)
-                                    <option value="{{ $item->id }}">{{ $item->major_name }}</option>
+                                    <option value="{{ $item->id }}"
+                                        {{ old('major_id', $student->major_id === $item->id) ? 'selected' : '' }}>
+                                        {{ $item->major_name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -122,12 +121,13 @@
                             <label class="d-flex align-items-center fs-5 fw-bold mb-2">
                                 <span class="required">Semester</span>
                             </label>
-                            <select data-control="select2"
-                                data-dropdown-parent="#kt_modal_edit_mahasiwa{{ $student->nim }}"
-                                data-placeholder="Pilih Semester..." name="semester"
-                                class="form-select form-select-solid" value="{{ $student->semester }}" />
+                            <select name="semester" data-control="select2" data-placeholder="Pilih Semester..."
+                                class="form-select form-select-solid" />
+                            <option value="">Semester... </option>
                             @foreach ($semester as $item)
-                                <option value="{{ $item }}">{{ $item }} </option>
+                                <option value="{{ $item }}"
+                                    {{ old('semester', $student->semester === $item ? 'selected' : '') }}>
+                                    {{ $item }} </option>
                             @endforeach
                             </select>
                             @error('semester')
@@ -141,12 +141,13 @@
                             <label class="d-flex align-items-center fs-5 fw-bold mb-2">
                                 <span class="required">Jenis Kelamin</span>
                             </label>
-                            <select data-control="select2"
-                                data-dropdown-parent="#kt_modal_edit_mahasiswa{{ $student->nim }}"
-                                data-placeholder="Pilih Jenis Kelamin..." class="form-select form-select-solid"
-                                name="jk" value="{{ $student->jk }}" />
-                            <option value="1">Laki-laki </option>
-                            <option value="0">Perempuan</option>
+                            <select name="jk" data-control="select2" data-placeholder="Pilih Jenis Kelamin..."
+                                class="form-select form-select-solid" />
+                            <option value="">Jenis Kelamin... </option>
+                            <option value="1" {{ old('jk', $student->jk === 1 ? 'selected' : '') }}>Laki-laki
+                            </option>
+                            <option value="0" {{ old('jk', $student->jk === 0 ? 'selected' : '') }}>Perempuan
+                            </option>
                             </select>
                             @error('jk')
                                 <div class="text-danger mt-2">
@@ -161,13 +162,16 @@
                             </label>
                             <select data-control="select2"
                                 data-dropdown-parent="#kt_modal_edit_mahasiswa{{ $student->nim }}"
-                                data-placeholder="Pilih Tahun Masuk..." class="form-select form-select-solid"
-                                name="tahun_masuk" value="{{ $student->tahun_masuk }}" />
+                                data-placeholder="Pilih Semester..." name="tahun_masuk"
+                                class="form-select form-select-solid" />
+                            <option disabled selected>Pilih Semester...</option>
                             @foreach ($years as $item)
-                                <option value="{{ $item }}">{{ $item }}</option>
+                                <option value="{{ $item }}"
+                                    {{ $student->tahun_masuk == $item ? 'selected' : '' }}>{{ $item }}
+                                </option>
                             @endforeach
                             </select>
-                            @error('tahun_masuk')
+                            @error('semester')
                                 <div class="text-danger mt-2">
                                     {{ $message }}
                                 </div>
@@ -178,13 +182,16 @@
                             <label class="d-flex align-items-center fs-5 fw-bold mb-2">
                                 <span class="required">Status</span>
                             </label>
-                            <select data-control="select2"
-                                data-dropdown-parent="#kt_modal_edit_mahasiswa{{ $student->nim }}"
-                                data-placeholder="Pilih Status..." class="form-select form-select-solid"
-                                name="status" value="{{ $student->status }}" />
-                            <option value="aktif">Aktif</option>
-                            <option value="nonaktif">Nonaktif</option>
-                            <option value="cuti">Cuti</option>
+                            <select name="status" data-control="select2" data-placeholder="Jurusan... "
+                                class="form-select form-select-solid" />
+                            <option value="aktif"
+                                {{ old('status', $student->status === 'aktif' ? 'selected' : '') }}>
+                                Aktif</option>
+                            <option value="nonaktif"
+                                {{ old('status', $student->status === 'nonaktif' ? 'selected' : '') }}>Nonaktif
+                            </option>
+                            <option value="cuti" {{ old('status', $student->status === 'cuti' ? 'selected' : '') }}>
+                                Cuti</option>
                             </select>
                             @error('status')
                                 <div class="text-danger mt-2">

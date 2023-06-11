@@ -32,8 +32,8 @@
                             <i class="ri-graduation-cap-fill text-white" style="font-size: 2.5rem"></i>
                         </span>
                         <!--end::Svg Icon-->
-                        <div class="text-white fw-bolder fs-2 mb-2 mt-5">Mahasiswa</div>
-                        <div class="text-white fw-bolder fs-2 mb-2 mt-5">10</div>
+                        <div class="text-white fw-bolder fs-2 mb-2 mt-5">Student</div>
+                        <div class="text-white fw-bolder fs-2 mb-2 mt-5">{{ $total_data }}</div>
                         {{-- <div class="fw-bold text-white">Flats, Shared Rooms, Duplex</div> --}}
                     </div>
                     <!--end::Body-->
@@ -50,8 +50,8 @@
                             <i class="ri-presentation-fill text-white" style="font-size: 2.5rem"></i>
                         </span>
                         <!--end::Svg Icon-->
-                        <div class="text-gray-100 fw-bolder fs-2 mb-2 mt-5">Dosen</div>
-                        <div class="fw-bold text-gray-100">5</div>
+                        <div class="text-gray-100 fw-bolder fs-2 mb-2 mt-5">Teacher</div>
+                        <div class="fw-bold text-gray-100">-</div>
                     </div>
                     <!--end::Body-->
                 </a>
@@ -67,8 +67,8 @@
                     <!--begin::Card body-->
                     <div class="card-body p-9">
                         <!--begin::Heading-->
-                        <div class="fs-2hx fw-bolder">237</div>
-                        <div class="fs-4 fw-bold text-gray-400 mb-7">Current Projects</div>
+                        <div class="fs-2hx fw-bolder">{{ $total_data }}</div>
+                        <div class="fs-4 fw-bold text-gray-400 mb-7">student status information</div>
                         <!--end::Heading-->
                         <!--begin::Wrapper-->
                         <div class="d-flex flex-wrap">
@@ -81,23 +81,23 @@
                             <div class="d-flex flex-column justify-content-center flex-row-fluid pe-11 mb-5">
                                 <!--begin::Label-->
                                 <div class="d-flex fs-6 fw-bold align-items-center mb-3">
-                                    <div class="bullet bg-primary me-3"></div>
+                                    <div class="bullet bg-success me-3"></div>
                                     <div class="text-gray-400">Active</div>
-                                    <div class="ms-auto fw-bolder text-gray-700">30</div>
+                                    <div class="ms-auto fw-bolder text-gray-700">2</div>
                                 </div>
                                 <!--end::Label-->
                                 <!--begin::Label-->
                                 <div class="d-flex fs-6 fw-bold align-items-center mb-3">
-                                    <div class="bullet bg-success me-3"></div>
-                                    <div class="text-gray-400">Completed</div>
-                                    <div class="ms-auto fw-bolder text-gray-700">45</div>
+                                    <div class="bullet bg-danger me-3"></div>
+                                    <div class="text-gray-400">Non-Active</div>
+                                    <div class="ms-auto fw-bolder text-gray-700">1</div>
                                 </div>
                                 <!--end::Label-->
                                 <!--begin::Label-->
                                 <div class="d-flex fs-6 fw-bold align-items-center">
-                                    <div class="bullet bg-gray-300 me-3"></div>
-                                    <div class="text-gray-400">Yet to start</div>
-                                    <div class="ms-auto fw-bolder text-gray-700">25</div>
+                                    <div class="bullet bg-warning-300 me-3"></div>
+                                    <div class="text-gray-400">Cuti</div>
+                                    <div class="ms-auto fw-bolder text-gray-700">1</div>
                                 </div>
                                 <!--end::Label-->
                             </div>
