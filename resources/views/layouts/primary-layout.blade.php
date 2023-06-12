@@ -57,6 +57,8 @@
     <!--begin::SweetAlert-->
     @include('sweetalert::alert')
     <!--end::SweetAlert-->
+    @stack('scripts')
+
 
 </body>
 <!--end::Body-->

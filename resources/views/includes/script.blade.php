@@ -22,7 +22,7 @@
 <script src="assets/js/custom/authentication/sign-up/general.js"></script>
 
 <!--Dashboard-->
-<script src="assets/js/custom/pages/projects/list/list.js"></script>
+{{-- <script src="assets/js/custom/pages/projects/list/list.js"></script> --}}
 
 {{-- setting Modal --}}
 @stack('modal-js')

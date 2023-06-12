@@ -30,6 +30,9 @@ class MahasiswaController extends Controller
         // total data
         $total_data = $students->count();
 
+
+
+
         return view('pages.mahasiswa.table_mahasiswa', $data, compact('students', 'years', 'majors', 'total_data'));
     }
 
