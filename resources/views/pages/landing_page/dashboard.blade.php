@@ -232,7 +232,6 @@
     </div>
 @endsection
 @push('scripts')
-    <script type="text/javascript"></script>
     <script>
         "use strict";
         var KTProjectList = {
@@ -243,6 +242,7 @@
                     var status = {!! json_encode($status_label) !!};
                     var statusTotal = {!! json_encode($status_total) !!};
 
+                    console.log(status);
                     if (t) {
                         var e = t.getContext("2d");
                         new Chart(e, {
