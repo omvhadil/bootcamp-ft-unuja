@@ -11,6 +11,7 @@ class DashboardController extends Controller
         $chart_status = Student::select('status')
             ->selectRaw('count(*) as total')
             ->groupBy('status')
+            // kenapa pake get()->toArray()? karena jika tidak, maka akan error
             ->get()->toArray();
 
         return view('pages.landing_page.dashboard', [
